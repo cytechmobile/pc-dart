@@ -111,7 +111,8 @@ class ASN1Parser {
       case 0xA3:
         return ASN1Object.fromBytes(bytes);
       default:
-        throw UnsupportedASN1TagException(tag);
+        //throw UnsupportedASN1TagException(tag);
+        return ASN1Object.fromBytes(bytes);
     }
   }
 
@@ -146,7 +147,8 @@ class ASN1Parser {
       case ASN1Tags.GENERALIZED_TIME:
         return ASN1GeneralizedTime.fromBytes(bytes);
       default:
-        throw UnsupportedASN1TagException(tag);
+        //throw UnsupportedASN1TagException(tag);
+        return ASN1Object.fromBytes(bytes);
     }
   }
 }
